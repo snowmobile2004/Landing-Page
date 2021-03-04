@@ -1,0 +1,17 @@
+name: Deploy my website - Purge Cloudflare Cache
+on: push
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+    # Put steps here to build your site, deploy it to a service, etc.
+
+    - name: Purge cache
+      uses: jakejarvis/cloudflare-purge-action@master
+      env:
+        # Zone is required by both authentication methods
+        CLOUDFLARE_ZONE: e43497585b242696c8db74540c25a02a
+
+        CLOUDFLARE_TOKEN: p8UI_9AAvG8e6GoNJCoJ91cESgXNdMUDFu-iXkRv
